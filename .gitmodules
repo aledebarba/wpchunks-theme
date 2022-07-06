@@ -1,0 +1,6 @@
+[submodule "chunks/engine"]
+	path = chunks/engine
+	url = https://github.com/aledebarba/wpchunks-plugin
+[submodule "chunks/cli"]
+	path = chunks/cli
+	url = https://github.com/aledebarba/wpchunks-cli
