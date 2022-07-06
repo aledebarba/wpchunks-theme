@@ -6,7 +6,11 @@
     <meta name='viewport' content='width=1920px, initial-scale=1.0'/>
     <title>WPChunks</title>
 </head>
-<body>
-    
-</body>
+<body><?php
+  
+  chunk('header');
+  chunk('loop');
+  chunk('footer');
+  
+?></body>
 </html>
