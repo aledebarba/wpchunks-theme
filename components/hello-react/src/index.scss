@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+//
+.hello-react {
+  
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  font-family: "IBM Plex Mono", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  width: fit-content;
+  
+  .content { 
+    border-radius: 16px;
+      background-color: cornsilk;
+      width: 380px;
+      margin: 16px auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .title {
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+
+      img { 
+        width: 48px; 
+        margin-right: 8px;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &:hover {
+          transform: scale(1.5);
+          transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        .info-item {
+          width: 55%;
+          display: grid;
+          grid-template-columns: 1.5fr auto;
+        }
+
+        div.component-label {  
+            font-size: 1em; 
+            color: gray; 
+          }
+
+        div.component-data { 
+            font-size: 1em; 
+            font-weight: bolder; 
+            color: black !important;  
+          }
+      }
+
+      .commands {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .command {
+        div { 
+          text-align: center;
+          font-weight: normal;
+        }
+        div:first-child {
+          padding-top: 16px;
+          font-weight: bold;
+          color: darkred;
+        }
+      }
+  }
+}

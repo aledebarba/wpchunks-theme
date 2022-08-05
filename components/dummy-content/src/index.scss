@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+//
+.dummy-content {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 24px;
+
+  
+
+  &__header {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;;
+    background-size: cover;
+    background-position: center bottom;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+    * { margin: 0; padding: 0; }    
+
+    h1 {
+      margin-bottom: 32px;
+      color: #65CCFF;
+      text-shadow: 
+        0px 0px 15px white, 
+        3px 3px 0px black,
+        -3px 3px 0px black,
+        3px -3px 0px black,
+        -3px -3px 0px black;
+        font-size: 3em;
+        
+      }
+
+    p {
+      padding: 0;
+      margin-bottom: 32px;
+      grid-area: p;
+      font-size: 0.8em;
+      color: white;
+    }
+    
+  }
+
+  &__main {
+    width: 100%;
+    margin-top: 36px;
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    div[class^="col-"] {
+      overflow-x: hidden;
+    }
+    .col-50 {
+      flex: 0 0 50%;
+      width: 50%;
+    }
+    .col-33 {
+      flex: 0 0 33.33%;
+      width: 33%;
+    }
+    .col-25 {
+      flex: 0 0 25%;
+      width: 25%;
+    }
+  }
+
+  .post {
+    display: grid;
+    grid-template-areas: 
+    "category date"
+    "image image"
+    "title title"
+    "content content"
+    "link link";
+
+    h1 {
+      grid-area: title;
+      color: magenta;
+      font-size: 1em;
+      background-color: rgb(201, 249, 201);
+      padding: 8px 16px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    h3 {
+      grid-area: category;
+      color: white;
+      font-size: 0.6em;
+      margin: 0;
+      padding: 4px 8px;
+      background-color: darkslateblue;
+
+    }
+
+    h4 {
+      grid-area: date;
+      color: black;
+      font-size: 0.6em;
+      text-align: right;
+      margin: 0;
+      padding: 4px 8px;
+      background-color: gold;
+    }
+
+    img {
+      grid-area: image;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      grid-area: link;
+      color: black;
+      font-size: 0.8em;
+      text-decoration: underline;
+      &:hover {
+        color: dodgerblue;
+      }
+    }
+
+    .text {
+      grid-area: content;
+      color: #333333;
+      line-height: 1.5em;
+      font-size: 0.6em;
+    }
+  }
+
+  .post-list {
+    .post {
+      margin-top: 16px;
+      .text {
+        max-height: 25vh;
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 80%;
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(255,255, 255,1) 100%);
+        }
+      }
+    }
+
+    .post:first-child {
+      margin-top: 0;
+    }
+  }
+}

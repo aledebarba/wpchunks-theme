@@ -1,0 +1,83 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/index.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap);
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/index.scss (1) ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+.hello-react {
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  font-family: "IBM Plex Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.hello-react .content {
+  border-radius: 16px;
+  background-color: cornsilk;
+  width: 380px;
+  margin: 16px auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hello-react .content .title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+.hello-react .content .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.hello-react .content img {
+  width: 48px;
+  margin-right: 8px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.hello-react .content img:hover {
+  transform: scale(1.5);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.hello-react .content .info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.hello-react .content .info .info-item {
+  width: 55%;
+  display: grid;
+  grid-template-columns: 1.5fr auto;
+}
+.hello-react .content .info div.component-label {
+  font-size: 1em;
+  color: gray;
+}
+.hello-react .content .info div.component-data {
+  font-size: 1em;
+  font-weight: bolder;
+  color: black !important;
+}
+.hello-react .content .commands {
+  display: flex;
+  flex-direction: column;
+}
+.hello-react .content .command div {
+  text-align: center;
+  font-weight: normal;
+}
+.hello-react .content .command div:first-child {
+  padding-top: 16px;
+  font-weight: bold;
+  color: darkred;
+}
+
+/*# sourceMappingURL=index.css.map*/
