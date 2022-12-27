@@ -1,0 +1,40 @@
+{
+  "name": "start-app",
+  "version": "0.0.1",
+  "description": "React Component for WpChucks component model",
+  "main": "_app.js",
+  "scripts": {
+    "build": "wp-scripts build src/_app.js",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start src/_app.js",
+    "dev": "wp-scripts start src/_app.js --hot",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "keywords": [
+    "wpchunk",
+    "wpchunk-cli",
+    "react"
+  ],
+  "license": "MIT",
+  "wpchunk": "react_app",
+  "dependencies": {
+    "@wordpress/scripts": "^25.0.0",
+    "framer-motion": "^6.2.4",
+    "popmotion": "^11.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.1",
+    "react-router-dom": "^6.4.5",
+    "styled-components": "^5.3.6",
+    "swiper": "^8.0.0"
+  }
+}

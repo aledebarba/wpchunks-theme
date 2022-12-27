@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@iconify/react": "^4.0.1"
+  },
+  "dependencies": {
+    "swr": "^2.0.0"
+  }
+}

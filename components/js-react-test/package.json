@@ -18,6 +18,6 @@
     "wpchunk-cli",
     "react"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "wpchunk": "react"
 }
