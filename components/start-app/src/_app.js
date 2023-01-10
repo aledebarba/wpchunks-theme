@@ -13,6 +13,7 @@ import {default as ProjectsPage} from "./pages/projects"
 import {default as NotFoundPage} from "./pages/404"
 
 const root = document.querySelector('[wpchunk-start-app]')
+
 root && render( <React.StrictMode>
           <BrowserRouter>
             <Routes>

@@ -2,63 +2,222 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { Icon  } from "@iconify/react";
 
 const Navigation = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuFrameVariants = { 
+    open: {
+      borderRadius: 12,   
+      backgroundColor: "#fff6",
+      width: "30vw",
+      height: "90vh",
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "4rem auto auto",
+      gridTemplateAreas: `"menuLabel" "primaryMenu" "secondaryMenu"`,
+      transition:{
+        duration: 1,
+        borderRadius: { duration: 0.1 },
+      }
+    },
+    closed: {   
+      borderRadius: 128,
+      backgroundColor: "#000",
+      width: "10rem",
+      height: "4rem",
+      display: "grid",      
+      gridTemplateAreas: "menuLabel",
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "1fr",
+      transition:{
+        duration: 1,
+        borderRadius: { delay: 0.9 },
+      }
+    }
+  }
 
   return (<>
-    <Nav state={isNavOpen} layout transition={spring}>
-
-      <div className="open-close" onClick={()=>{ setIsNavOpen(!isNavOpen)}}>
-        { isNavOpen 
-          ? <motion.div className="open"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-          >FECHAR</motion.div>
-          : <motion.div layout className={ isNavOpen ? "hide" : "closed" } 
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-          >MENU</motion.div>
-        }
-      </div>
-
-      <div className="primary-menu">        
-          <div className="primary-menu-item">
-            <Link to="/">Home</Link>
-          </div>
-          <div className="primary-menu-item">
-            <Link to="/projects">Nossos Projetos</Link>
-          </div>
-          <div className="primary-menu-item">
-            <Link to="/about">Quem Somos</Link>
-          </div>
-          <div className="primary-menu-item">
-            <Link to="/contact">Contato</Link>
-          </div>
-        
-      </div>
-
-      {/* <div className="secondary-menu">
-        <div className="secondary-menu-item">
-          <a href="https://facebook.com">Linkedin</a>
-        </div>
-        <div className="secondary-menu-item">
-          <a href="https://twitter.com">Instagram</a>
-        </div>
-        <div className="secondary-menu-item">
-          <a href="https://instagram.com">Twitter</a>
-        </div>
-        <div className="secondary-menu-item">
-          <a href="https://linkedin.com">Youtube</a>
-        </div>
-      </div> */}
-
-    </Nav>
-    
+    <MenuFrame 
+      layout 
+      initial={ closed }
+      animate={ isOpen ? "open" : "closed" }
+      variants={menuFrameVariants}>
+      <MenuLabel   isOpen={ isOpen } onClick={()=>{setIsOpen(!isOpen)}} layout>
+        <span>{ isOpen ? "Fechar" : "Menu" }</span>
+        <span>
+          { isOpen ? <Icon icon="mdi:close" /> : <Icon icon="mdi:menu" />}
+        </span>
+      </MenuLabel>
+      <MenuOptions isOpen={ isOpen } layout>
+        <motion.div 
+          className="primary-menu"
+          animate={ isOpen ? "open" : "closed" }
+          variants={menuVariants}
+        >        
+              <motion.div 
+                className="primary-menu-item" 
+                variants={menuItemVariants}
+              >
+                <Link to="/">Home</Link>
+              </motion.div>
+              <motion.div 
+                className="primary-menu-item" 
+                variants={menuItemVariants}
+              >
+                <Link to="/projects">Nossos Projetos</Link>
+              </motion.div>
+              <motion.div 
+                className="primary-menu-item" 
+                variants={menuItemVariants}
+              >
+                <Link to="/about">Quem Somos</Link>
+              </motion.div>
+              <motion.div 
+                className="primary-menu-item" 
+                variants={menuItemVariants}
+              >
+                <Link to="/contact">Contato</Link>
+              </motion.div>
+        </motion.div>
+      </MenuOptions>
+    </MenuFrame>
     </>
   );
 };
+ 
+const menuVariants = {
+  open: {           
+    transition: {      
+      staggerChildren: 0.1,
+      delayChildren: 0.3,      
+    }
+  },
+  closed: {       
+    transition: {
+      staggerChildren: 0.1,
+      staggerDirection: -1,      
+     },
+     
+  }
+}
+
+const menuItemVariants = {
+  open: {    
+    y: -50,
+    opacity: 1,
+    transition: {
+      y: { ease:"easeInOut", duration: 0.5 },
+      opacity: { duration: 0.3 },            
+    },    
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },      
+    }
+  }
+};
+
+const menuOpenMediaQuery = `
+  @media (min-width: 540px) {
+    width: 70vw;
+  }
+  @media (min-width: 768px) {
+    width: 50vw;
+  }
+  @media (min-width: 1024px) {
+    width: 40vw;
+  }
+  @media (min-width: 1440px) {
+    width: 30vw;
+  }
+  @media (min-width: 2560px) {
+    width: 20vw;
+  }
+`
+const menuClosedMediaQuery = `
+  @media (min-width: 768px) {
+    width: 10rem;
+    height: 4rem;
+  }
+`
+const MenuFrame = styled(motion.div)`
+  z-index: 20000;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.animated-props[data-isopen="false"]{
+    width: 12rem;
+    height: 5rem;
+    backdrop-filter: blur(0px);  
+    ${menuClosedMediaQuery}  
+  }
+  
+  &.animated-props[data-isopen="true"]{
+    width: 90vw;
+    height: 85vh;
+    backdrop-filter: blur(50px);    
+    //box-shadow: 0 0 55px 0px #0003, inset 1px 1px 0px 1px #fff4, inset -1px -1px 0px 1px #0006 ;
+    ${menuOpenMediaQuery}  
+  }
+`
+
+const MenuLabel = styled(motion.div)`
+    /* z-index: 20001;
+    
+    width: 10rem;
+    height: 4rem;
+    top: 24px;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    transition: all 0.5s ease-in-out; */
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-transform: uppercase;
+    color: ${ props => props.isOpen ? "black" : "white" };
+    font-weight: ${ props => props.isOpen ? 700 : 400 };
+    font-size: 1.1rem;
+    cursor: pointer;
+`;
+
+const MenuOptions = styled(motion.div)`
+  //position: fixed;
+  //top: 15vh;
+  //right: 24px;
+  z-index: 20002;
+  display: flex;
+  justify-content: flex-start;
+
+  .primary-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+  
+  ${menuOpenMediaQuery}
+  
+  .primary-menu-item a {
+    color: #fffd;
+    font-size: 2rem;
+    text-decoration: none;      
+    text-shadow: 2px 2px 5px #000a;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+`;
 
 const spring = {
   type: "spring",
@@ -172,11 +331,7 @@ const Nav = styled(motion.div)`
         }
       }
     }
-  }
-
-
-    
-    
+  }   
 `
 
 export default Navigation;
