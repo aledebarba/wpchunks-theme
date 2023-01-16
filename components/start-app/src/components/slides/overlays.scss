@@ -1,0 +1,28 @@
+.shade {
+    background-image: url(https://fixthephoto.com/images/content/film-photo-overlay-21610458606.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    mix-blend-mode: lighten;
+    opacity: 0.2;
+}
+
+.downgrade {
+    background-image: linear-gradient(to bottom, #0002, #0008);
+    background-repeat: no-repeat;
+    mix-blend-mode: darken;
+    backdrop-filter: blur(0.5px);
+}
+
+.blurring {
+    backdrop-filter: blur(0px);
+    animation: to-bluer 4s ease-in alternate infinite;
+}
+
+@keyframes to-bluer {
+    0% {
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        backdrop-filter: blur(10px);
+    }
+}

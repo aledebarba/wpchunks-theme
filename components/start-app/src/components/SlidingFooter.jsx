@@ -63,10 +63,11 @@ const StyledSocialIcons = styled.div`
         }
     `
 const FixedFooter = styled(motion.div)`
-    --closed-height: 5vh;
-    --open-height: 5vh;
+    --closed-height: 6vh;
+    --open-height: 6vh;
     --open-bg-color: #222222;
     --closed-bg-color: #222222;
+    --bg: linear-gradient(180deg, #00000000 15%, var(--closed-bg-color) 15%);
 
     position: fixed;
     bottom: 0;
@@ -79,15 +80,16 @@ const FixedFooter = styled(motion.div)`
     padding: 1.5rem 3rem 2.5rem 3rem;    
 
     @media screen and (min-width: 768px) {
-        --closed-height: fit-content;
-        --open-height: 15vh; 
-        --open-bg-color: #111111e8;
-        --closed-bg-color: #131313;
+        --closed-height: 7vh;
+        --open-height: 20vh; 
+        --open-bg-color: #181818e8;
+        --closed-bg-color: #222222;
+        
     }
 
     .backlogo{ 
         position: absolute;
-        top: 0;
+        top: 15%;
         left: 0;
         width: 100%;
         height: 100%;
@@ -127,6 +129,7 @@ const fixedFooterVariants = {
     closed: {
         height: "var(--closed-height)",
         backgroundColor: "var(--closed-bg-color)",
+        background: "var(--bg)",
         transition: {
             duration: 0.3,
             easing: "quintInOut"

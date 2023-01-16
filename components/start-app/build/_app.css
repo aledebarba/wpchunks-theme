@@ -81,6 +81,7 @@ table {
   --form-label-color: #333e44;
   --form-input-color: #12171a;
   --form-input-border-color: #554f4f;
+  --footer-compensation: 5vh;
 }
 
 body {
@@ -123,6 +124,242 @@ body .content .data {
   font-size: 1em;
   font-weight: bolder;
   color: black;
+}
+
+.scrolldown {
+  --color: white;
+  --sizeX: 30px;
+  --sizeY: 50px;
+  position: relative;
+  width: var(--sizeX);
+  height: var(--sizeY);
+  margin-left: var(sizeX/2);
+  border: calc(var(--sizeX) / 10) solid var(--color);
+  border-radius: 50px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: var(--color);
+  border-radius: 100%;
+  animation: scrolldown-anim 2s infinite;
+  box-sizing: border-box;
+  box-shadow: 0px -5px 3px 1px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
+}
+.chevrons {
+  padding: 6px 0 0 0;
+  margin-left: -3px;
+  margin-top: 48px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chevrondown {
+  margin-top: -6px;
+  position: relative;
+  border: solid var(--color);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+  animation: pulse 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+  animation: pulse 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/slides/overlays.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.shade {
+  background-image: url(https://fixthephoto.com/images/content/film-photo-overlay-21610458606.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: lighten;
+  opacity: 0.2;
+}
+
+.downgrade {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1333333333), rgba(0, 0, 0, 0.5333333333));
+  background-repeat: no-repeat;
+  mix-blend-mode: darken;
+  -webkit-backdrop-filter: blur(0.5px);
+          backdrop-filter: blur(0.5px);
+}
+
+.blurring {
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  animation: to-bluer 4s ease-in alternate infinite;
+}
+
+@keyframes to-bluer {
+  0% {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+  100% {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/slides/buttons.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.details__links {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.details__links a {
+  text-decoration: none;
+}
+
+.button__default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  color: #c1c1c1;
+  border: 1px solid #c1c1c1;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  background-color: #2d2d2d;
+  flex-wrap: wrap;
+}
+.button__default span {
+  order: 0;
+  margin-right: 0.5rem;
+}
+.button__default svg {
+  transform: scale(1.2);
+}
+.button__default:hover {
+  transform: scale(1.05) translateY(-4px);
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/slides/common.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.slideFillMovie__container__text {
+  --title-width: 40vw;
+  overflow: visible !important;
+}
+
+.title__container {
+  overflow: hidden;
+  width: var(--title-width);
+}
+.title__container h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  width: var(--title-width);
+  letter-spacing: 1px;
+  overflow: hidden;
+  height: 100%;
+  font-weight: var(--text-light);
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.4;
+}
+
+.title-underline {
+  width: var(--title-width);
+  height: 2px;
+  background-color: #fff;
+  margin-top: 1rem;
+  position: relative;
+}
+.title-underline::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 5px solid white;
+  border-radius: 50%;
+  bottom: -8px;
+  right: -16px;
+  opacity: var(--right-dot-opacity, 0);
+  box-sizing: border-box;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/slides/background-styles.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+.gradient-blue {
+  --color-from: #00274e;
+  --color-to: #1b0019;
+  background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+}
+
+.gradient-green {
+  --color-from: darkgreen;
+  --color-to: lightgreen;
+  background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+}
+
+.gradient-gold {
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.gradient-pink {
+  --color-from: #2d1020;
+  --color-to: #150b11;
+  background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+}
+
+.gradient-darkgray {
+  --color-from: #333;
+  --color-to: #000;
+  background: linear-gradient(to bottom, var(--color-from), var(--color-to));
 }
 /*!****************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper.min.css ***!

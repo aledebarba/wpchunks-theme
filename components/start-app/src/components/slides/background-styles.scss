@@ -1,0 +1,28 @@
+.gradient-blue {
+    --color-from: #00274e;
+    --color-to: #1b0019;
+    background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+}
+
+.gradient-green {
+    --color-from: darkgreen;
+    --color-to: lightgreen;
+    background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+}
+
+.gradient-gold {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.gradient-pink {
+    --color-from: #2d1020;
+    --color-to: #150b11;
+    background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+}
+
+.gradient-darkgray {
+    --color-from: #333;
+    --color-to: #000;
+    background: linear-gradient(to bottom, var(--color-from), var(--color-to));        
+}

@@ -10,7 +10,7 @@ export const Brand = ( { color, size, styleOverride, link } ) => {
         return <>
             <DefaultBrand style={ styleOverride }>
                 <Link to={link}>
-                    <Logo>
+                    <Logo layout>
                         <div className='h'></div>
                         <div className='type'></div>
                         <div className='wave'></div>
@@ -22,8 +22,14 @@ export const Brand = ( { color, size, styleOverride, link } ) => {
 
 }
 
-export const Symbol = () => <></>
-export const Type = () => <></>
+export const Symbol = () => <Logo>
+    <div className="h"></div>
+    <div className="wave waveanimate"></div>
+</Logo>
+
+export const Type = () => <Logo>
+    <div className="type"></div>
+</Logo>
 
 Brand.defaultProps = {
     color: 'white',
@@ -33,14 +39,13 @@ Brand.defaultProps = {
 }
 
 Symbol.defaultProps = Brand.defaultProps;
-
 Type.defaultProps = Brand.defaultProps;
 
 
 const Logo = styled.div`    
     width: 300px;
     height: 50px;
-    transform: scale(0.5);
+    transform: scale(1);
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 
@@ -53,7 +58,7 @@ const Logo = styled.div`
     }
 
     .h {
-        background-image: url("${imgurl}/logo/logo.svg");
+        background-image: url("${imgurl}/logo/logo.svg");        
     }
 
     .wave {
@@ -61,10 +66,26 @@ const Logo = styled.div`
         height: 50px;
         background-image: url("${imgurl}/logo/wave.svg");        
         clip-path: polygon(15px 5px,62px 5px,52px 70px,32px 70px);
-        background-position: 0 0;
+        background-position: 0px 0;
         transition: all 1s ease-in-out;
         cursor: pointer;
+
+        &.waveanimate {
+            animation: waving 1s linear infinite;
+            background-position: 0px 0;
+        } 
     }
+
+  
+
+    @keyframes waving {
+            from {
+                background-position: -0px 0;
+            }
+            to {
+                background-position: -47px 0;
+            }
+        }
 
     &:hover {
         transform: scale(1);

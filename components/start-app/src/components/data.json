@@ -1,0 +1,265 @@
+{
+  "projetos": [
+    {
+      "layout":"movie",
+      "home":false,
+      "animation": "",
+      "footer":false,
+      "showVideo": true,
+      "showVideo2": false,
+      "style": "default",
+      "title":"Abra seus olhos.",
+      "description": "Este documentário acompanha a história inspiradora de uma psicóloga cega que, com sua perspicácia única, ensina as pessoas a enxergar o mundo de uma forma diferente. Acompanhando sua jornada, veremos como ela supera as dificuldades e desafios, e como sua visão do mundo pode nos ajudar a transformar nossas próprias vidas.",
+      "alt":"Imagem com uma garota loira sorrindo",
+      "url": "/projetos/abraseusolhos",
+      "director":"Ághata Poe",
+      "writer":"Mary Shelley",
+      "creator":"Mercy Wasmann",
+      "year":"2021",
+      "buttons": [
+        {
+          "label":"Saiba mais",
+          "style": "default",
+          "target": "_self",
+          "icon": "material-symbols:arrow-right-alt-rounded",
+          "link": {
+            "type": "page", 
+            "url": "/projeto"
+          }
+        },
+        {
+          "label":"Assista ao trailer",
+          "style": "default",
+          "target": "_blank",          
+          "icon": "carbon:logo-youtube",
+          "link": {
+            "type": "page", 
+            "url": "https://www.youtube.com/watch?v=wx8PMS0xAyM"
+          }          
+        }
+      ],
+      "category":"Curta, Documentário",
+      "image":"https://ws42.cc/servers/media/img/hysteria/0001.jpg",
+      "video": {
+        "default": "https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+        "mobile": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        },
+        "desktop": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        }
+      },
+      "video2": {
+        "default": "https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+        "mobile": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        },
+        "desktop": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        }
+      }
+    },
+    {
+      "layout":"movie-info",      
+      "home":false,
+      "animation": "twovideos",
+      "footer":false,
+      "showVideo": true,
+      "showVideo2": true,
+      "style": "gradient--secondary",      
+      "title":"Além da caminhada.",
+      "description": "Curta sobre a história de uma mulher que, após a morte trágica de sua esposa e um longo processo de depressão, descobre a terapia da natureza e começa a ensinar outras mulheres sobre meditação e caminhadas. Ela compartilha sua própria jornada de cura e explica os processos biológicos, como a liberação de endorfinas e a redução do estresse, que ocorrem durante a caminhada e ajudam no combate à depressão. Acompanhando suas alunas em suas próprias jornadas de cura, ela mostra como a natureza pode ser uma força poderosa na superação de desafios mentais e emocionais. Juntas, elas encontram esperança e recuperação enquanto caminham para a luz.",
+      "alt":"Imagem com uma garota loira sorrindo",
+      "url": "/projetos/abraseusolhos",
+      "director":"Ághata Poe",
+      "writer":"Mary Shelley",
+      "creator":"Mercy Wasmann",
+      "year":"2021",
+      "buttons": [
+        {
+          "label":"Saiba mais",
+          "style": "default",
+          "target": "_self",
+          "icon": "material-symbols:arrow-right-alt-rounded",
+          "link": {
+            "type": "page", 
+            "url": "/projeto"
+          }
+        },
+        {
+          "label":"Assista ao trailer",
+          "style": "default",
+          "target": "_blank",          
+          "icon": "carbon:logo-youtube",
+          "link": {
+            "type": "page", 
+            "url": "https://www.youtube.com/watch?v=wx8PMS0xAyM"
+          }          
+        }
+      ],
+      "category":"Curta, Documentário",
+      "image":"https://ws42.cc/servers/media/img/hysteria/0001.jpg",
+      "video": {
+        "default":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm",
+        "mobile": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm",
+            "mp4":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm",
+            "mp4":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm"
+          }
+        },
+        "desktop": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm",
+            "mp4":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm",
+            "mp4":"https://ws42.cc/servers/media/video/footage/pexels-yan-6616347.webm"
+          }
+        }
+      },
+      "video2": {
+        "default": "https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+        "mobile": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        },
+        "desktop": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        }
+      }
+    },
+    {
+      "layout":"two-columns-video-text",
+      "home":false,
+      "animation": "",
+      "footer":false,
+      "showVideo": true,
+      "showVideo2": false,
+      "style": "gradient--primary",
+      "title":"Dançar com a vida",
+      "description": "'Dançando com a Vida' é a história inspiradora de uma bailarina paraplégica que, após um acidente trágico, se muda para o bairro de Heliópolis em São Paulo e começa a ensinar dança para crianças da comunidade. Enfrentando desafios pessoais e sociais, ela luta para superar suas limitações físicas e encoraja seus alunos a alcançarem seus sonhos. Juntos, eles se unem para criar uma apresentação final emocionante que celebra a força humana e a beleza da dança.",
+      "alt":"Imagem com uma garota loira sorrindo",
+      "url": "/projetos/abraseusolhos",
+      "director":"Ághata Poe",
+      "writer":"Mary Shelley",
+      "creator":"Mercy Wasmann",
+      "year":"2021",
+      "buttons": [
+        {
+          "label":"Saiba mais",
+          "style": "default",
+          "target": "_self",
+          "icon": "material-symbols:arrow-right-alt-rounded",
+          "link": {
+            "type": "page", 
+            "url": "/projeto"
+          }
+        },
+        {
+          "label":"Assista ao trailer",
+          "style": "default",
+          "target": "_blank",          
+          "icon": "carbon:logo-youtube",
+          "link": {
+            "type": "page", 
+            "url": "https://www.youtube.com/watch?v=wx8PMS0xAyM"
+          }          
+        }
+      ],
+      "category":"Curta, Documentário",
+      "image":"https://ws42.cc/servers/media/img/hysteria/0001.jpg",
+      "video": {
+        "default": "https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+        "mobile": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        },
+        "desktop": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        }
+      },
+      "video2": {
+        "default": "https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+        "mobile": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        },
+        "desktop": {
+          "vertical": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          },
+          "horizontal": {
+            "webm":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm",
+            "mp4":"https://ws42.cc/servers/media/video/reel/HystereelSmall.webm"
+          }
+        }
+      }
+    }
+  ]
+}

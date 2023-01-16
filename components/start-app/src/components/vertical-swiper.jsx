@@ -1,17 +1,51 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import styled from "styled-components";
-import ResponsiveImage from "./responsive-image";
-import animatedLogo from "/src/images/brand-white-animated.svg";
+import Loading from "./loading";
+import SlideFillMovie from "./slides/slide-fill-movie";
+import SlideFillMovieInfo from "./slides/slide-fill-movie-info";
+import Slide2ColsMovieInfo from "./slides/slide-2cols-movie-info";
+import Slide3ColsInfoMovieMovie from "./slides/slide-3cols-info-movie-movie";
+import Slide3ColsInfoDescMovie from "./slides/slide-3cols-info-desc-movie";
+import { useMockupProjects } from "./use-data";
+
+// swiper
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper";
-import { motion, useAnimation } from "framer-motion"
 
-const VerticalSwiper = ( { setVisible } ) => {
+// wordpress data
+const [ dir, url ] = start_app[1].params;
+const dataUrl = `${url}/components/start-app/src/components/data.json`;
 
-  const videoRef = useRef(null);
+const VerticalSwiper = ( { setVisible } ) => { 
 
+  const [currentSlides, setCurrentSlides] = useState({actual: 0, next: 1});
+  
+  const slidesLoader = useMockupProjects();
+  const [slides, setSlides] = useState([]);
+  useEffect(() => {
+    if( slidesLoader.data !== null && slidesLoader.data !== undefined ) {
+      if( slidesLoader.data.projetos !== undefined ) {
+        setSlides(slidesLoader.data.projetos);
+      }
+    }
+  }, [slidesLoader]);
+
+  const updateIndexes = (swiper, n) => {
+    let newActual = swiper.realIndex;
+    if( newActual < 0 ) newActual = screens.length - 1;
+    if( newActual > screens.length - 1 ) newActual = 0;
+    
+    let newNext = newActual + n;
+    if( newNext < 0 ) newNext = screens.length - 1;
+    if( newNext > screens.length - 1 ) newNext = 0;
+    setCurrentSlides({ actual: newActual, next: newNext });
+  }
+
+  // abort if no slides
+  if( slides.length === 0 ) return <></>
+  
     return (
       <StyledSwiper>
         <Swiper
@@ -21,147 +55,60 @@ const VerticalSwiper = ( { setVisible } ) => {
           mousewheel={true}
           speed={1000}
           resistanceRatio={1}
-          loop={true}
+          loop={false}
           parallax={true}
           pagination={{
             clickable: true,
           }}
+          
           modules={[Mousewheel, Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>            
-            <Video onLoad={ setVisible } src="https://flock.ws/flamingo/server-movie/hysteria/hystereel.mp4" type="video/mp4" />            
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0001.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0002.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0003.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0004.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0005.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0006.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ResponsiveImage srcset={[
-              { src: "https://flock.ws/flamingo/server-image/hysteria/0007.jpg", alt: "Projeto Histeria 01", type: "image/jpeg", media: "(min-width: 180px)" },
-            ]} style={{
-              height: "100%",
-              minWidth: "100vw",
-              objectFit: "cover",
-            }}/>
-          </SwiperSlide>
-          
-        </Swiper>
+          { slides.map( (slide, index) => {            
+            return (<>
+              { slide.layout === "movie" && (
+                <Suspense fallback={<Loading />}>
+                  <SwiperSlide key={index}>
+                    <SlideFillMovie {...slide} index={index} currentSlide={currentSlides} /> 
+                  </SwiperSlide> 
+                </Suspense>
+              )}
+              { slide.layout === "movie-info" && (
+                <Suspense fallback={<Loading />}>
+                  <SwiperSlide key={index}>
+                    <SlideFillMovieInfo {...slide} index={index} currentSlide={currentSlides} /> 
+                  </SwiperSlide> 
+                </Suspense>
+              )}
+              { slide.layout === "two-cols-movie-info" && (
+                <Suspense fallback={<Loading />}>
+                  <SwiperSlide key={index}>
+                    <Slide2ColsMovieInfo {...slide} index={index} currentSlide={currentSlides} /> 
+                  </SwiperSlide> 
+                </Suspense>
+              )}
+              { slide.layout === "three-cols-info-movie-movie" && (
+                <Suspense fallback={<Loading />}>
+                  <SwiperSlide key={index}>
+                    <Slide3ColsInfoMovieMovie {...slide} index={index} currentSlide={currentSlides} /> 
+                  </SwiperSlide> 
+                </Suspense>
+              )}
+              { slide.layout === "three-cols-info-desc-movie" && (
+                <Suspense fallback={<Loading />}>
+                  <SwiperSlide key={index}>
+                    <Slide3ColsInfoDescMovie {...slide} index={index} currentSlide={currentSlides} /> 
+                  </SwiperSlide> 
+                </Suspense>
+              )}
+              </>
+            ) 
+          })}
+          </Swiper>
       </StyledSwiper>
     );
   }
 
-  const Video = ({ src, onLoad }) => {
-    const videoRef = useRef(null);
-    const control = useAnimation();
-    const [ displayStyle, setDisplayStyle ] = useState({ opacity: 0, transition: "all 2s ease-in-out" })
-    useEffect(() => {
-        const video = videoRef.current;
-        video.src = src;
-        video.muted = true;
-        video.loop = true;
-        video.autoplay = true;
-        video.controls = false;
-        video.addEventListener('canplay', ()=>{ 
-            setDisplayStyle( { opacity: 1 } )
-            onLoad(true)
-        });
-        video.load();
-      
-    }, [src, onLoad]);
-  
-    const videoStyle = {
-      position: "absolute",
-      width: "100vw",
-      height: "100vh",
-      objectFit: "cover",
-      top: 0,
-      left: 0,
-      opacity: 0,
-      transition: "all 2s ease-in-out" 
-    }
-
-    const loadingStyle = {
-      position: "absolute",
-      color: "white",
-      width: "100vw",
-      height: "100vh",
-      display: "grid",
-      placeItems: "center",
-      top: 0,
-      left: 0,
-    }
-
-    return (
-      <div>
-        <motion.video ref={videoRef} style={{...videoStyle, ...displayStyle }} />
-        {!videoRef.current && <div style={loadingStyle}><p>Loading...</p></div>}
-      </div>
-    );
-  };
-  
-  
-  const Loading = styled.div`
-     width: 100vw;
-     @media screen and ( min-width: 768px) {
-      width: 45vw;
-     }
-     img {
-      transform: scale(0.5);
-      overflow: visible;
-      object-fit: contain !important;
-     }
-  `
   const StyledSwiper = styled.div`
   --swiper-pagination-color: #dfdfde;  
   --swiper-pagination-bullet-size: 24px;
@@ -172,12 +119,12 @@ const VerticalSwiper = ( { setVisible } ) => {
     top: 0;
     left: 0;
     box-sizing: border-box;
-    width: ${ (window.innerWidth - 15) + "px"};
-    height: ${ (window.innerHeight) + "px"};
+    width: 100vw;
+    height: 100vh;
     
 }
 .swiper-wrapper {
-   transition-timing-function: cubic-bezier(1.000, -0.010, 0.405, 1.195);
+   --transition-timing-function: cubic-bezier(1.000, -0.010, 0.405, 1.195);
 }
 
 .swiper-slide {
@@ -199,50 +146,6 @@ const VerticalSwiper = ( { setVisible } ) => {
   -webkit-align-items: center;
   align-items: center;
 
-  //animation: hysteria-easeInBounce 1s forwards 1 linear;
-}
-
-@keyframes hysteria-easeInBounce {
-	0% {
-		transform: translateY(0%);
-	}
-
-	4% {
-		transform: translateY(-1.54%);
-	}
-
-	8% {
-		transform: translateY(-0.66%);
-	}
-
-	18% {
-		transform: translateY(-6.25%);
-	}
-
-	26% {
-		transform: translateY(-1.63%);
-	}
-
-	46% {
-		transform: translateY(-24.98%);
-	}
-
-	64% {
-		transform: translateY(-1.99%);
-	}
-
-	76% {
-		transform: translateY(-56.44%);
-	}
-
-	88% {
-		transform: translateY(-89.11%);
-	}
-
-	100% {
-		transform: translateY(-100%);
-	}
-
 }
 
 .swiper-slide img,
@@ -252,6 +155,7 @@ const VerticalSwiper = ( { setVisible } ) => {
   height: 100%;
   object-fit: cover;
 }
-  `
-  
+  `;
+
+
 export default VerticalSwiper;

@@ -1,0 +1,42 @@
+.slideFillMovie__container__text {
+    --title-width: 40vw;
+    overflow: visible !important;
+}
+.title__container {
+    overflow: hidden;
+    width: var(--title-width);
+
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        width: var(--title-width);
+        letter-spacing: 1px;
+        overflow: hidden;
+        height: 100%;
+        font-weight: var(--text-light);
+        display: flex;
+        align-items: flex-end;
+        line-height: 1.4;
+    }
+}
+
+.title-underline {
+    width: var(--title-width);
+    height: 2px;
+    background-color: #fff;
+    margin-top: 1rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border: 5px solid white;
+        border-radius: 50%;
+        bottom: -8px;
+        right: -16px;
+        opacity: var(--right-dot-opacity, 0);
+        box-sizing: border-box;
+    }
+}
