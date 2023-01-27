@@ -1,0 +1,19 @@
+{
+  "name": "wpchunks-blocks",
+  "version": "1.0.0",
+  "description": "WPChunks Blocks",
+  "main": "wp-chunk-flip-screen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build ./src/wp-chunk-flip-screen.js",
+    "start": "wp-scripts start ./src/wp-chunk-flip-screen.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/core-data": "^6.2.0",
+    "@wordpress/scripts": "^25.2.0",
+    "react-player": "^2.11.0"
+  }
+}

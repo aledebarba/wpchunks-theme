@@ -29,6 +29,8 @@ export const useColabs = ( path="/wp-json/wp/v2/colabs" ) => {
     }
 }
 
+
+
 export const useConfig = ( path="/wp-json/wp/v2/admin" ) => {
     const { data, error, isLoading } = useSWR(path, fetcher);
     return {
@@ -48,6 +50,15 @@ export const useClients = ( path="/wp-json/wp/v2/clients" ) => {
 }
 
 export const useMockupProjects = ( path="/wp-content/themes/hysteria-theme/components/start-app/src/data/projetos.json" ) => {
+    const { data, error, isLoading } = useSWR(path, fetcher);
+    return {
+        data,
+        error,
+        isLoading
+    }
+}
+
+export const useBrands = ( path="/wp-json/wp/v2/marca" ) => {
     const { data, error, isLoading } = useSWR(path, fetcher);
     return {
         data,

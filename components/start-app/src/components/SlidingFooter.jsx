@@ -24,7 +24,6 @@ const SlidingFooter = () => {
                     <span>Com Histórias</span>
                     <span>Para Contar</span>
                 </Slogan>
-                <SocialIcons/>
             </FixedFooter>
         );
     }
@@ -69,6 +68,7 @@ const FixedFooter = styled(motion.div)`
     --closed-bg-color: #222222;
     --bg: linear-gradient(180deg, #00000000 15%, var(--closed-bg-color) 15%);
 
+    pointer-events: all;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -137,7 +137,7 @@ const fixedFooterVariants = {
     },
     open: {
         height: "var(--open-height)",
-        backgroundColor: "var(--open-bg-color)",
+        backgroundColor: "var(--open-bg-color)",        
         transition: {
             duration: 0.5,
             easing: "quintInOut"

@@ -220,70 +220,7 @@ const SlideContent = styled(motion.div)`
     }
 
     .slideFillMovie__container__text {
-        --ml: 4vw;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        text-align: left;
-        margin-left: var(--ml);
-        transform: translateY(-50%);
         
-        .title__container {
-            overflow: hidden;
-            width: 40vw;
-
-            h1 {
-                font-size: 3rem;
-                text-transform: uppercase;
-                width: 40vw;
-                letter-spacing: 1px;
-                overflow: hidden;
-                height: 100%;
-                font-weight: var(--text-light);
-                display: flex;
-                align-items: flex-end;
-                line-height: 1.4;
-            }
-        }
-
-        .title-underline {
-            width: calc( 50vw - var(--ml) );
-            height: 2px;
-            background-color: #fff;
-            margin-top: 1rem;
-            position: relative;
-
-            &::after {
-                content: "";
-                position: absolute;
-                width: 16px;
-                height: 16px;
-                border: 5px solid white;
-                border-radius: 50%;
-                bottom: -8px;
-                right: -16px;
-                opacity: var(--right-dot-opacity, 0);
-                box-sizing: border-box;
-            }
-        }
-
-        .details {
-            display: grid;
-            grid-template-columns: fit-content(100%) fit-content(100%);
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-
-            .creator-label, .writer-label, .director-label {
-                font-weight: var(--text-light);
-            }
-            .creator-value, .writer-value, .director-value {
-                font-weight: var(--text-bold);
-            }
-
-        }
-
-
     }
     
 `

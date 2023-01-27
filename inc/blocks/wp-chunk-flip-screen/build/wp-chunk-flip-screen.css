@@ -1,0 +1,561 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/css-loader@6.7.3_webpack@5.75.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_6jdsrmfenkuhhw3gx4zvjlznce/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.57.1+webpack@5.75.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/wp-chunk-flip-screen.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wpchunks-block--flip-screen-block {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  margin-bottom: 5rem;
+  padding: 0 1rem 0.5rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 25px -6px black;
+}
+.wpchunks-block--flip-screen-block div {
+  box-sizing: border-box;
+}
+.wpchunks-block--flip-screen-block .block-info {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 8px;
+  width: calc(100% + 4px);
+  background-color: rgb(42, 42, 44);
+  z-index: 2;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid rgb(90, 90, 90);
+  left: -2px;
+  top: -8px;
+}
+.wpchunks-block--flip-screen-block .block-info .icon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgb(217, 72, 53);
+  border: none;
+  border-radius: 50%;
+}
+.wpchunks-block--flip-screen-block .block-info .block-type,
+.wpchunks-block--flip-screen-block .block-info .block-desc,
+.wpchunks-block--flip-screen-block .block-info .block-layout,
+.wpchunks-block--flip-screen-block .block-info .block-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.wpchunks-block--flip-screen-block .block-info .block-type:after,
+.wpchunks-block--flip-screen-block .block-info .block-desc:after,
+.wpchunks-block--flip-screen-block .block-info .block-layout:after,
+.wpchunks-block--flip-screen-block .block-info .block-title:after {
+  content: ">";
+  margin: 0 8px;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: red;
+}
+.wpchunks-block--flip-screen-block .block-info .block-title::after {
+  content: "";
+}
+.wpchunks-block--flip-screen-block .block-info .block-type {
+  margin-left: 16px;
+}
+.wpchunks-block--flip-screen-block .block-info .block-edit-button {
+  margin-left: auto;
+}
+.wpchunks-block--flip-screen-block .block-main-selectors {
+  margin-top: 3.5rem;
+  gap: 8px;
+}
+.wpchunks-block--flip-screen-block .block-main-selectors--left-col {
+  width: 35%;
+  padding: 4px;
+}
+.wpchunks-block--flip-screen-block .block-main-selectors--right-col {
+  width: 65%;
+  padding: 4px;
+}
+.wpchunks-block--flip-screen-block .render-screen-preview {
+  min-width: 62%;
+  padding: 8px;
+  border-radius: 8px;
+}
+.wpchunks-block--flip-screen-block .control-label {
+  margin: 16px 0 0px 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.wpchunks-block--flip-screen-block .control-label h5 {
+  color: black;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 8px 0;
+}
+.wpchunks-block--flip-screen-block .control-label h5:before {
+  content: "";
+  width: 10px;
+  height: 16px;
+  margin-right: 8px;
+  background-color: rgb(75, 64, 64);
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2666666667);
+}
+.wpchunks-block--flip-screen-block .control-label:first-of-type {
+  margin-top: 0;
+}
+.wpchunks-block--flip-screen-block .gradient-picker {
+  padding: 12px;
+  border: 1px solid rgb(194, 194, 194);
+  background-color: rgba(0, 0, 0, 0.0666666667);
+  border-radius: 8px;
+}
+.wpchunks-block--flip-screen-block .control-select-box select {
+  font-size: 1rem !important;
+}
+.wpchunks-block--flip-screen-block .choose-layout input {
+  margin: 8px;
+}
+.wpchunks-block--flip-screen-block .choose-layout input ~ label {
+  white-space: pre-line;
+  max-width: 15vw;
+  color: rgba(0, 0, 0, 0.5333333333);
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.wpchunks-block--flip-screen-block .choose-layout input ~ label::first-line {
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.wpchunks-block--flip-screen-block .screen-type {
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.wpchunks-block--flip-screen-block .screen-type--title {
+  font-size: 1rem;
+  color: #232323;
+  display: flex;
+  gap: 8px;
+  border-radius: 4px;
+  align-items: center;
+}
+.wpchunks-block--flip-screen-block .screen-type--title .icon {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  display: inline-grid;
+  place-content: center;
+  color: black;
+  background-color: white;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2666666667);
+  border: 1px solid white;
+}
+.wpchunks-block--flip-screen-block .screen-type--image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2666666667);
+}
+.wpchunks-block--flip-screen-block .screen-type--slider {
+  position: relative;
+  width: 100%;
+  padding-top: 64.1025641026%;
+  background: linear-gradient(45deg, rgba(61, 61, 61, 0.8666666667), rgba(24, 24, 24, 0.8666666667));
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2666666667);
+  overflow: hidden;
+}
+.wpchunks-block--flip-screen-block .screen-type--slider .inner {
+  box-sizing: border-box;
+  --slide-size: calc(100% / var(--slides));
+  --slider-duration: calc(var(--slides) * 0.5s);
+  width: calc(100% * var(--slides));
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.wpchunks-block--flip-screen-block .screen-type--slider .inner img {
+  width: calc(100% / var(--slides));
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wpchunks-block--flip-screen-block .screen-type--mormal-slider {
+  position: relative;
+  width: 100%;
+  padding-top: 64.1025641026%;
+  background: linear-gradient(45deg, rgba(61, 61, 61, 0.8666666667), rgba(24, 24, 24, 0.8666666667));
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2666666667);
+}
+.wpchunks-block--flip-screen-block .screen-type--mormal-slider .inner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.wpchunks-block--flip-screen-block .screen-type--mormal-slider .inner img {
+  height: 35%;
+  width: 15%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  transform: translateY(var(--startY, 10%));
+  opacity: 0;
+  animation: fadeup 0.3s ease-in-out forwards var(--delay, 0.2s);
+}
+@keyframes fadeup {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.wpchunks-block--flip-screen-block .screen-type--no-selection {
+  position: relative;
+  width: 100%;
+  padding-top: 64.1025641026%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(187, 187, 187, 0.5333333333) rgba(0, 0, 0, 0.5333333333) rgba(0, 0, 0, 0.5333333333) rgba(187, 187, 187, 0.5333333333);
+  border-radius: 8px;
+}
+.wpchunks-block--flip-screen-block .screen-type--no-selection .inner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw;
+}
+.wpchunks-block--flip-screen-block .screen-type .renderPosterImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
+}
+.wpchunks-block--flip-screen-block .error {
+  padding: 1rem !important;
+}
+.wpchunks-block--flip-screen-block .text-elements--wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 8px 4px;
+  padding: 0;
+  overflow: hidden;
+}
+.wpchunks-block--flip-screen-block .text-elements--wrapper div[class^=text-elements--] {
+  display: grid;
+  grid-template-columns: 48px minmax(20ch, max-content) auto;
+  grid-template-rows: 2rem;
+  align-items: center;
+  padding: 8px;
+}
+.wpchunks-block--flip-screen-block .text-elements--wrapper div[class^=text-elements--]:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1333333333);
+}
+.wpchunks-block--flip-screen-block .text-elements--wrapper div[class^=text-elements--]:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.0666666667);
+}
+.wpchunks-block--flip-screen-block .text-elements--wrapper div:nth-child(1) {
+  margin: auto 0;
+}
+.wpchunks-block--flip-screen-block .components-custom-gradient-picker__gradient-bar {
+  border-radius: 32px;
+}
+.wpchunks-block--flip-screen-block .components-custom-gradient-picker__control-point-button {
+  padding: 0;
+}
+.wpchunks-block--flip-screen-block .custom-select---element {
+  margin: 0;
+  padding: 0;
+}
+.wpchunks-block--flip-screen-block .custom-select---element li[role=option] {
+  align-items: flex-start;
+  padding: 8px;
+}
+.wpchunks-block--flip-screen-block .custom-select---element button span.help {
+  display: none;
+}
+.wpchunks-block--flip-screen-block .custom-select---element label {
+  display: none !important;
+}
+.wpchunks-block--flip-screen-block .custom-selector-option {
+  height: -moz-fit-content;
+  height: fit-content;
+  line-height: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.wpchunks-block--flip-screen-block .custom-selector-option .option {
+  color: black;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+.wpchunks-block--flip-screen-block .custom-selector-option .help {
+  display: block;
+  color: dodgerblue;
+  font-size: 0.8rem;
+  max-height: 3rem;
+  overflow: hidden;
+}
+
+.preview-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 64.1025641026%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.5333333333);
+}
+.preview-wrapper--inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: 0;
+}
+.preview-wrapper--inner .children {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.preview-wrapper--inner .overlay-elements .text {
+  position: absolute;
+  font-size: 0.8em;
+  color: white;
+  background-color: transparent;
+  top: 70%;
+  left: 10%;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: minmax(fit-content, 6ch) 2ch 2ch;
+  grid-gap: 4px;
+  grid-template-areas: "title title title" "info info info" "button button button";
+}
+.preview-wrapper--inner .overlay-elements .text .title,
+.preview-wrapper--inner .overlay-elements .text .long-title,
+.preview-wrapper--inner .overlay-elements .text .type,
+.preview-wrapper--inner .overlay-elements .text .channel,
+.preview-wrapper--inner .overlay-elements .text .button {
+  height: 16px !important;
+  min-height: 0;
+  display: inline;
+}
+.preview-wrapper--inner .overlay-elements .text .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: title;
+  font-weight: bold;
+  font-size: 1em;
+}
+.preview-wrapper--inner .overlay-elements .text .long-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: title;
+  font-weight: bold;
+  font-size: 1em;
+}
+.preview-wrapper--inner .overlay-elements .text .info {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: info;
+  display: flex;
+  gap: 4px;
+  font-size: 0.8em;
+}
+.preview-wrapper--inner .overlay-elements .text .button {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: button;
+  display: inline;
+  border-radius: 8px;
+  position: relative;
+  padding-left: 2ch;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 0.8em;
+}
+.preview-wrapper--inner .overlay-elements .text .button:before {
+  position: absolute;
+  content: "►";
+  left: 0;
+}
+.preview-wrapper--inner .overlay-elements .graphics {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.preview-wrapper--inner .overlay-elements .graphics .dots {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 20px;
+  height: 118px;
+  background: radial-gradient(circle at 30% 50%, #fff 0%, #fff 30%, transparent 30%, transparent 100%);
+  background-repeat: repeat-y;
+  background-size: 25px 25px;
+  background-position: 3px 0;
+  transform: translateY(-50%) scale(0.7);
+}
+.preview-wrapper--inner .overlay-elements .graphics .dots:after, .preview-wrapper--inner .overlay-elements .graphics .dots:before {
+  position: absolute;
+  content: "";
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  width: 12px;
+  height: 12px;
+  left: 3px;
+}
+.preview-wrapper--inner .overlay-elements .graphics .dots:after {
+  top: -15px;
+  transform: rotate(45deg);
+}
+.preview-wrapper--inner .overlay-elements .graphics .dots:before {
+  bottom: -18px;
+  transform: rotate(225deg);
+}
+.preview-wrapper--inner .overlay-elements .graphics .scroll-icon {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3%;
+  height: 7%;
+  border-radius: 20vw;
+  border: 2px solid white;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2666666667);
+  box-sizing: border-box;
+}
+.preview-wrapper--inner .overlay-elements .graphics .scroll-icon:after {
+  position: absolute;
+  content: "";
+  width: 40%;
+  height: 80%;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  background-color: white;
+}
+
+.layout-video-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.layout-video-preview .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.layout-video-preview .video-container video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.layout-header-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--bg, linear-gradient(45deg, rgb(66, 66, 66), rgb(142, 142, 142)));
+}
+.layout-header-preview .media-chooser {
+  position: absolute;
+  height: 55%;
+  width: 60%;
+  left: 35%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5333333333);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2666666667);
+  overflow: hidden;
+}
+.layout-header-preview .media-chooser .no-image {
+  width: 90%;
+  text-align: center;
+  opacity: 0.5;
+}
+.layout-header-preview .media-chooser img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*# sourceMappingURL=wp-chunk-flip-screen.css.map*/

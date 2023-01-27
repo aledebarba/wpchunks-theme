@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Brand } from './brand'
 import { useState } from 'react'
 import { Icon } from "@iconify/react"
+import { useSettings } from './useHooks'
 
-// get app wordpress params
-const [ dir, url ] = start_app[1].params
-const imgurl = `${url}/components/start-app/src/images`
-
-export const Menu = () => {
+export default function Menu(){
 
     const [ isOpen, setIsOpen ] = useState( false )
 
@@ -18,9 +15,9 @@ export const Menu = () => {
     }
 
     return (
-            <TopNav>
+            <TopNav settings={ useSettings }>
                 <div>
-                    <Brand styleOverride={ { position: "static" } }/>
+                    <Brand styleOverride={ { position: "static", pointerEvents: "all" } }/>
                 </div>
                 <MenuContent>
                     <MenuButton handleClick={ handleClick } isOpen={isOpen}/>
@@ -34,7 +31,7 @@ export const Menu = () => {
                             <Link to='/about'>Sobre Hysteria</Link>
                         </MenuItem>
                         <MenuItem>
-                            <Link to='/contact'>BrandLab</Link>
+                            <Link to='/brandlab'>BrandLab</Link>
                         </MenuItem>
                         <MenuItem>
                             <Link to='/contact'>Colaboradores</Link>
@@ -197,10 +194,11 @@ const MenuItem = styled.li`
 
 const MenuButton = ( { isOpen, handleClick }  ) => {    
     return <StyledMenuButton 
+        settings={ useSettings }
         isOpen={isOpen} 
         onClick={ handleClick } 
         layout 
-        variants={ menuButtonVariants } 
+        variants={ useSettings.navstyle === "button" ? menuButtonVariants : {} } 
         animate={ isOpen ? "open" : "closed" } 
         initial="closed">
             <span>
@@ -236,8 +234,7 @@ const menuButtonVariants = {
 const StyledMenuButton = styled(motion.div)`
     cursor: pointer;
     display: flex;
-    width: 4rem;
-    height: 4rem;
+    padding: 8px 12px;
     color: #fff;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -247,8 +244,16 @@ const StyledMenuButton = styled(motion.div)`
     background: #000000;    
     z-index: 200;
     position: relative;
-    border-radius: 128px;    
-    box-shadow: ${props => props.isOpen ?  "none"  : "inset 0 0 0 2px #ffff"};
+
+    ${ props => props.settings.navstyle === "bar" && css`
+        background: transparent;
+    `}
+
+    ${ props => props.settings.navstyle === "button" && css`
+        border-radius: 128px;    
+        box-shadow: ${props => props.isOpen ?  "none"  : "inset 0 0 0 2px #ffff"};
+        pointer-events: all;
+    `}
 
     span:nth-child(1) {
         display: none;        
@@ -267,7 +272,6 @@ const StyledMenuButton = styled(motion.div)`
 
 `
 
-
 const TopNav = styled.div`
     box-sizing: border-box;
     position: fixed;
@@ -275,7 +279,6 @@ const TopNav = styled.div`
     left: 0;
     width: 100vw;
     height: fit-content;
-    background: #00000000;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -283,4 +286,9 @@ const TopNav = styled.div`
     align-items: flex-start;
     padding: 1rem 4vw;
     z-index: 200;
+    ${ props => props.settings.navstyle === "bar" && css`
+        background: #000000aa;
+        backdrop-filter: blur(5px);
+    `}
+
 `;

@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 // get app wordpress params
-const [ dir, url ] = start_app[1].params;
-const imgurl = `${url}/components/start-app/src/images`;
+const url = start_app[1].url.theme
+const imgurl = `${url}/components/start-app/src/images`
 
 export const Brand = ( { color, size, styleOverride, link } ) => { 
     if( color="white" ) { 
@@ -28,7 +28,7 @@ export const Symbol = () => <Logo>
 </Logo>
 
 export const Type = () => <Logo>
-    <div className="type"></div>
+    <div className="type" style={{ backgroundPosition: -95 }}></div>
 </Logo>
 
 Brand.defaultProps = {

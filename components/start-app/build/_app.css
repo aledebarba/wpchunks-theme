@@ -1,7 +1,7 @@
 /*!******************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./styles/index.scss ***!
   \******************************************************************************************************************************************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap);
+@import url(https://use.typekit.net/kow8xhi.css);
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./styles/index.scss (1) ***!
   \**********************************************************************************************************************************************************************************************************************************************/
@@ -73,28 +73,49 @@ table {
   --shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   --text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   --button-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  --text-light: 100;
-  --text-normal: 400;
+  --text-light: 300;
+  --text-normal: 500;
   --text-bold: 700;
   --text-black: 700;
+  --font-light: 300;
+  --font-normal: 500;
+  --font-bold: 700;
+  --font-black: 700;
   --form-background-color: #fff;
   --form-label-color: #333e44;
   --form-input-color: #12171a;
   --form-input-border-color: #554f4f;
   --footer-compensation: 5vh;
+  --dynamic-page-height: 100vh;
+  --dynamic-overflow-y: hidden;
 }
 
 body {
   background-color: var(--background-color);
   background-image: linear-gradient(180deg, var(--background-color), var(--primary-color));
   color: var(--text-color);
-  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "futura-pt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
+  height: var(--dynamic-page-height);
+  max-height: var(--dynamic-page-height);
+  overflow-y: var(--dynamic-overflow-y);
+  overscroll-behavior-y: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body .scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
 }
 body .content {
   margin: 16px auto;
@@ -295,12 +316,22 @@ body .content .data {
   overflow: visible !important;
 }
 
-.title__container {
+.slideFillMovie__container__text {
+  --title-width: 25vw;
+  text-align: left;
+  width: var(--title-width);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slideFillMovie__container__text .title__container {
   overflow: hidden;
   width: var(--title-width);
 }
-.title__container h1 {
-  font-size: 3rem;
+.slideFillMovie__container__text .title__container h1 {
+  font-size: clamp(24px, 3vw, 5rem);
   text-transform: uppercase;
   width: var(--title-width);
   letter-spacing: 1px;
@@ -311,15 +342,14 @@ body .content .data {
   align-items: flex-end;
   line-height: 1.4;
 }
-
-.title-underline {
+.slideFillMovie__container__text .title-underline {
   width: var(--title-width);
   height: 2px;
   background-color: #fff;
   margin-top: 1rem;
   position: relative;
 }
-.title-underline::after {
+.slideFillMovie__container__text .title-underline::after {
   content: "";
   position: absolute;
   width: 16px;
@@ -330,6 +360,47 @@ body .content .data {
   right: -16px;
   opacity: var(--right-dot-opacity, 0);
   box-sizing: border-box;
+}
+.slideFillMovie__container__text .details {
+  display: grid;
+  grid-template-columns: fit-content(100%) fit-content(100%);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.slideFillMovie__container__text .details .creator-label, .slideFillMovie__container__text .details .writer-label, .slideFillMovie__container__text .details .director-label {
+  font-weight: var(--text-light);
+}
+.slideFillMovie__container__text .details .creator-value, .slideFillMovie__container__text .details .writer-value, .slideFillMovie__container__text .details .director-value {
+  font-weight: var(--text-bold);
+}
+.slideFillMovie__container__text .details .details__links {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.slideFillMovie__container__text .details .details__links span {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+  border-radius: 99px;
+  background-color: #3d3d3d;
+  color: #aaa;
+  font-weight: var(--text-bold);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.slideFillMovie__container__text .details .details__links span:hover {
+  color: white;
+  background-color: #000;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
 }
 /*!*********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/slides/background-styles.scss ***!

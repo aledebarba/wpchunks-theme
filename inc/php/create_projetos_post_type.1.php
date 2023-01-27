@@ -220,8 +220,8 @@ add_action('init', 'create_projetos_post_type');
 //           });
 //         }
 //       });
-//       </script>
-//   <?php }
+//       <!-- /script>
+//   /*<?php 
 
 //   public function select_image_from_library() {
 //     // Enqueue the WordPress media library API and jQuery
