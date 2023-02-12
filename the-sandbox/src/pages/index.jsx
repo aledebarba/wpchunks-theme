@@ -6,9 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ReactComponent as Logo } from './logo-hysteria-branco.svg';
 import { TransitionSlidingText } from '../components/TransitionSlidingText';
 
+import { Menu } from '../components/menu';
+
 const lenis = new Lenis({
 	duration: 1.2,
-	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+	easing: (t) => Math.min(1, 1.001 - Math.pow(5, -1 * t))
 });
  
 function raf(time) {
@@ -24,13 +26,13 @@ const Index = () => {
 	gsap.registerPlugin(ScrollTrigger);
 	
 	return(
-	<>
+	<>	<Menu />
 		<section className="header">
 			<div className="header--background"></div>
 			
 			<div className="video-left">
 				<video  
-					src="https://hysteria.ws42.cc/media-server/movies/zoodiaca.webm" 
+					src="https://hysteria.ws42.cc/media-server/movies/home2.webm" 
 					autoPlay
 					loop
 					muted
@@ -39,7 +41,7 @@ const Index = () => {
 			</div>
 			<div className="video-right">
 				<video  
-					src="https://hysteria.ws42.cc/media-server/movies/zoodiaca.webm" 
+					src="https://hysteria.ws42.cc/media-server/movies/home2.webm" 
 					autoPlay
 					loop
 					muted
@@ -49,7 +51,7 @@ const Index = () => {
 			
 			<div className="header--center-circle">
 				<video  
-					src="https://hysteria.ws42.cc/media-server/movies/zoodiaca.webm" 
+					src="https://hysteria.ws42.cc/media-server/movies/home2.webm" 
 					autoPlay
 					loop
 					muted
@@ -64,8 +66,9 @@ const Index = () => {
 					<div className="bottom">pra contar</div>
 				</div>
 			</div>
-			<div className="circle" style={{ "--top": "65vh"}}></div>
-			<div className="circle" style={{ "--top": "-45vh", "--left": "60vw"}}></div>
+
+			<div className="circle hleft"></div>
+			<div className="circle hright"></div>
 		</section>
 
 		<TransitionSlidingText />

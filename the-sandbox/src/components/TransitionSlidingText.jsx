@@ -44,10 +44,10 @@ export const TransitionSlidingText = ({ text = "Projetos" }) => {
 				"clip-path": "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)",
 				scrollTrigger: {
 					trigger: panel.current,
-					start: "top 75%",
-					end: "top 20%",
+					start: "top 80%",
+					end: "top 10%",
 					scrub: true,
-					easing: "ease.out",
+					
 				}
 			}, 0);
 
