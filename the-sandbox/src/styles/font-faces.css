@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'August';
+    src: url('../src/pages/assets/fonts/august-serif-400.woff2') format('woff2');
+  }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../src/pages/assets/fonts/montserrat.woff2') format('woff2');
+  }
+@font-face {
+    font-family: 'Newsreader';
+    src: url('../src/pages/assets/fonts/newsreader-regular.woff2') format('woff2');
+  }
+

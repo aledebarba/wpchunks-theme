@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "wp-scripts build ./src/wp-chunk-page-options.js",
-    "start": "wp-scripts start ./src/wp-chunk-page-options.js"
+    "start": "wp-scripts start ./src/wp-chunk-page-options.js",
+    "dev": "concurrently \"wp-scripts start ./src/wp-chunk-page-options.js\" \"browser-sync http://hysteriaetc.local/wp-admin/post.php\\?post=682\\&action\\=edit --files 'src/*.*'\""
   },
   "keywords": [],
   "author": "ale@alemacedo.com",
   "license": "ISC",
   "dependencies": {
     "@wordpress/core-data": "^6.2.0",
+    "@wordpress/icons": "^9.16.0",
     "@wordpress/scripts": "^25.2.0"
   }
 }

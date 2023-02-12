@@ -1,0 +1,22 @@
+{
+  "name": "wpc-cpt-social",
+  "version": "1.0.0",
+  "description": "WPChunk Custom Post Type for social networks and sites links for Hysteria website",
+  "main": "wpc-cpt-social.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build ./src/wpc-cpt-social.js",
+    "start": "wp-scripts start ./src/wpc-cpt-social.js"
+  },
+  "keywords": [ "wordpress", "custom block", "custom post type", "hysteria"],
+  "author": "https://github.com/aledebarba",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/core-data": "^6.3.0",
+    "@wordpress/scripts": "^25.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "typescript": "^4.9.5"
+  }
+}

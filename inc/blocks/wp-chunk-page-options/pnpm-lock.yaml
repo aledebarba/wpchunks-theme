@@ -2,10 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   '@wordpress/core-data': ^6.2.0
+  '@wordpress/icons': ^9.16.0
   '@wordpress/scripts': ^25.2.0
 
 dependencies:
   '@wordpress/core-data': 6.2.0
+  '@wordpress/icons': 9.16.0
   '@wordpress/scripts': 25.2.0
 
 packages:
@@ -2783,6 +2785,15 @@ packages:
       tannin: 1.2.0
     dev: false
 
+  /@wordpress/icons/9.16.0:
+    resolution: {integrity: sha512-t6BPT5FXlh1VsTvO+I4X1UBZYgtwPVnZWOWyKJSGFas2MgdHh++LJ6avPQoPdGNsaixpfXsVvSZ5Snqhb7pfXQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@wordpress/element': 5.2.0
+      '@wordpress/primitives': 3.23.0
+    dev: false
+
   /@wordpress/is-shallow-equal/4.25.0:
     resolution: {integrity: sha512-XtvXgI8mf8s7RYmsygY7f0ROPHPdYgm3w9WrQkG1U3+Od4H4QTPIHU91UHifiLKzVkjYJbjvEMY69Ml2i6Z5zw==}
     engines: {node: '>=12'}
@@ -2853,6 +2864,15 @@ packages:
       prettier: '>=2'
     dependencies:
       prettier: /wp-prettier/2.6.2
+    dev: false
+
+  /@wordpress/primitives/3.23.0:
+    resolution: {integrity: sha512-HeE1aVrQF8fT4qrVKFzGAjEMua9OBYXvhPa+3WQlGXfz0gRAgf17X+PABFeJRbwypZ+SVNA/21Bkf+/BL/V/0w==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@wordpress/element': 5.2.0
+      classnames: 2.3.2
     dev: false
 
   /@wordpress/priority-queue/2.25.0:
@@ -3732,6 +3752,10 @@ packages:
 
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
+    dev: false
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /clean-webpack-plugin/3.0.0_webpack@5.75.0:

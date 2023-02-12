@@ -1,0 +1,11 @@
+*[data-block-name="wpc-cpt-brands"] {
+    box-shadow: none !important;
+
+    &:focus {
+        &:after {
+            outline: 0 !important;
+            border: 0 !important;
+            box-shadow: none !important;
+        }
+    }
+}

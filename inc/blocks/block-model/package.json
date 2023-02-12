@@ -1,0 +1,22 @@
+{
+  "name": "wpc-cpt-brands",
+  "version": "1.0.0",
+  "description": "WPChunks Custom Post Type - Brands - Block for Hysteria Theme",
+  "main": "wpc-cpt-brands.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build ./src/wpc-cpt-brands.js",
+    "start": "wp-scripts start ./src/wpc-cpt-brands.js"
+  },
+  "keywords": [],
+  "author": "https://github.com/aledebarba",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/core-data": "^6.3.0",
+    "@wordpress/scripts": "^25.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "typescript": "^4.9.5"
+  }
+}

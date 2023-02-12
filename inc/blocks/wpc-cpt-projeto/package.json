@@ -1,0 +1,45 @@
+{
+  "name": "wpc-cpt-projeto",
+  "version": "1.0.0",
+  "description": "WPChunk Custom Post Type for social networks and sites links for Hysteria website",
+  "main": "index.js",
+  "scripts": {
+    "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
+    "sync": "browser-sync start -p 'hysteria.local' --files './*.php' 'src/*.*'",
+    "build": "npm-run-all --sequential buildwp tailwindbuild",
+    "buildwp": "wp-scripts build src/index.js",
+    "wpstart": "wp-scripts start src/index.js",
+    "start": "npm-run-all --parallel wpstart tailwindwatch",
+    "tailwindbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --postcss --minify",
+    "tailwindwatch": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --postcss --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress",
+    "custom block",
+    "custom post type",
+    "hysteria"
+  ],
+  "author": "https://github.com/aledebarba",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@wordpress/core-data": "^6.3.0",
+    "@wordpress/scripts": "^25.3.0",
+    "fast-glob": "^3.2.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-player": "^2.11.0",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.11",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-nesting": "^11.1.0",
+    "tailwindcss": "^3.2.6"
+  }
+}

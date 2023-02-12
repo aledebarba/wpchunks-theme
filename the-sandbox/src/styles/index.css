@@ -1,0 +1,220 @@
+@import "./font-faces.css";
+@import "./custom-scroll-bars.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {  
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  --display: 4rem "August", serif;
+  --serif: 2rem "Newsreader", serif;
+  --sans: 1.2rem "Montserrat", sans-serif;
+
+  --red: #f32d2d;
+  --pink: #f44878;
+  --white: #f1efe8;
+
+}
+
+div[class^="wpchunk-"], div[class*=" wpchunk-"] {
+  position: relative;
+
+
+  video {
+    position: absolute;
+    widtht: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .circle {
+    width: var(--size, 80vh);
+    height: var(--size, 80vh);
+    border-radius: 9999px;
+    position: absolute;
+    top: var(--top, 0);
+    left: var(--left, 0);
+    border: var(--border, 1px) solid var(--border-color, white);
+  }
+
+  section {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    border: 1px solid black;
+  }
+
+  .header {
+    --border-circle-size: 88vh;
+    --center-circle-size: 106vh;
+    --shift: 25;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+    max-height: 100vh;
+    position: relative;
+  }
+  
+  .video-left, .video-right {
+    overflow: hidden;
+    position: absolute;
+    left: -50vw;
+    width: 100vw;
+    height: 100vh;
+
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(0.2);
+    }
+  }
+
+  .video-right {
+    left: 50vw;
+  }
+
+  .header--center-circle {
+      position: absolute;
+      border: 2px solid white;
+      border-radius: 9999px;
+      width: var(--center-circle-size);
+      height: var(--center-circle-size);
+      transform: translate(-50%, -49%);
+      left: 50%;
+      top: 50%;
+
+      video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 999rem;
+        overflow: hidden;
+      }
+
+      .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5vh;
+        width: 12vw;
+        height: 10vh;        
+      }
+
+      .text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        text-align: center;
+        color: white;
+        z-index: 1;
+        line-height: 1;
+        
+        .top, .bottom {
+          font: var(--serif);
+          font-weight: 100;
+          font-size: 2.8rem;
+        }
+        
+        .center {
+          font: var(--display);
+          font-size: 14rem;
+        }
+
+      }
+  }
+
+
+  .transition--parallax-text--projetos {
+    background-color: var(--white);
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    overflow: hidden;
+    
+    .under-panel, .over-panel {
+      position: absolute;      
+      left: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      
+      .text {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 4rem;        
+        align-items: center;
+        
+        span:first-child {
+          font: var(--display);
+          font-size: 18rem;
+        }
+        
+        span:last-child {
+          font: var(--serif);
+          font-weight: 100;
+          font-size: 18rem;
+        }
+      }
+
+    }
+    .under-panel {
+      background-color: var(--white);
+      .text {
+        color: var(--red);
+      }
+    }
+    
+    .over-panel {
+      background-color: var(--red);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      .text {
+        color: var(--pink);
+      }
+    }
+    
+    }
+
+  section.projects {
+    position: relative;
+    height: 100vh;    
+    width: 90vw;
+    border: 10px solid red;
+    overflow: scroll;
+
+    .horizontal--container {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+
+      .project--item {
+          width: 100vw;
+          height: 100vh;
+
+          .project--background-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+        }
+
+      }
+    }
+  }
+
+
+}

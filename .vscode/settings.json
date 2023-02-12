@@ -1,5 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
     "diffEditor.codeLens": true,
-    "svg.preview.background": "editor"
+    "svg.preview.background": "editor",
+    "docwriter.style": "Auto-detect"
 }

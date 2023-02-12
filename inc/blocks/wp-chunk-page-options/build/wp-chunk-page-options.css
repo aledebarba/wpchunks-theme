@@ -2,13 +2,96 @@
   !*** css ./node_modules/.pnpm/css-loader@6.7.3_webpack@5.75.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_6jdsrmfenkuhhw3gx4zvjlznce/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.57.1+webpack@5.75.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/wp-chunk-page-options.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .wpc-page-options--options {
-  background-color: f0f0f1;
+  background-color: #f4f4f8;
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  padding-top: 4rem;
+  position: relative;
 }
-.wpc-page-options--options .my-panel {
-  border-bottom: 1px;
+.wpc-page-options--options .heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin-bottom: 1rem;
+  background-color: #2d2d2d;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
 }
-.wpc-page-options--options h1 {
-  color: dodgerblue;
+.wpc-page-options--options .heading .icon {
+  background-color: red;
+  font-size: 20px;
+  border-radius: 99px;
+  color: white;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-content: center;
+}
+.wpc-page-options--options .heading .breadcrumb span {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.wpc-page-options--options .heading .breadcrumb span:after {
+  color: red;
+  content: ">";
+  margin: 0 1rem;
+}
+.wpc-page-options--options .heading .breadcrumb span:last-child:after {
+  content: "";
+}
+.wpc-page-options--options .heading .breadcrumb span:first-child {
+  margin-left: 1rem;
+}
+.wpc-page-options--options .text-control-base-component-setup {
+  margin-bottom: 16px;
+}
+.wpc-page-options--options .checkbox-control-group-screen-options {
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  padding-top: 1.5rem;
+  border-radius: 8px;
+}
+.wpc-page-options--options .my-tab-panel {
+  background-color: white;
+}
+.wpc-page-options--options .my-tab-panel div[role=tablist] {
+  box-sizing: border-box;
+}
+.wpc-page-options--options .my-tab-panel--panels-content {
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: #f8f8fc;
+}
+.wpc-page-options--options .my-tab-panel button[role=tab] {
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  background-color: #f8f8fc;
+  border-radius: 8px 8px 0 0;
+}
+.wpc-page-options--options .my-tab-panel button[role=tab][aria-selected=true] {
+  border-radius: 8px 8px 0 0;
+  border-color: black;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  box-shadow: 0px 4px 0 0 #F8F8FC;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.wpc-page-options--options .my-tab-panel--options-title h2 {
+  height: 2rem;
+  background-color: #d8d8d8;
 }
 
 /*# sourceMappingURL=wp-chunk-page-options.css.map*/
